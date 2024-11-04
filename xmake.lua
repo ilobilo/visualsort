@@ -6,11 +6,15 @@ set_version("v0.1")
 set_license("GPL-3.0")
 
 add_rules("mode.debug", "mode.release")
+set_policy("run.autobuild", true)
 
 add_requires("ncursesw")
 
 target("visualsort")
     set_kind("binary")
+
+    set_toolchains("clang")
+    set_runtimes("c++_shared")
 
     add_packages("ncursesw")
 
